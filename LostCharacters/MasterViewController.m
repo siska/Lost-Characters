@@ -39,7 +39,6 @@
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError)
     {
         {
-
             NSError *connectionError = nil;
             if (data)
             {
