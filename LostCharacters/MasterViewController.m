@@ -17,10 +17,12 @@
 
 @implementation MasterViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
 
-    if (self.characters.count == 0) {
+    if (self.characters.count == 0)
+    {
         [self pullFromPList];
     }
     else
@@ -37,20 +39,23 @@
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError)
     {
 
-        {
+
             NSError *connectionError = nil;
             if (data)
             {
                 NSDictionary *dict = [NSPropertyListSerialization propertyListWithData:data options:NSPropertyListReadCorruptError format:NULL error:&connectionError];
-                NSArray *tempDataArray = [dict objectForKey:@"Root"];
+                //NSArray *tempDataArray = [dict objectForKey:@""];
 
-                NSLog(@"%@", tempDataArray);
+
+
+                NSLog(@"%@", dict);
 
 
 
 
             }
-        }
+
+    }];
 
     /*
         {
