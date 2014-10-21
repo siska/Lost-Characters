@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6244" systemVersion="14A389" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Character" syncable="YES">
-        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="actor" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="passenger" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="Event">
         <attribute name="timeStamp" optional="YES" attributeType="Date">
@@ -11,6 +12,6 @@
     </entity>
     <elements>
         <element name="Event" positionX="261" positionY="189" width="128" height="60"/>
-        <element name="Character" positionX="270" positionY="207" width="128" height="58"/>
+        <element name="Character" positionX="270" positionY="207" width="128" height="73"/>
     </elements>
 </model>

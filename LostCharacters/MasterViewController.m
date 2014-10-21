@@ -44,56 +44,19 @@
             {
                 NSDictionary *dict = [NSPropertyListSerialization propertyListWithData:data options:NSPropertyListReadCorruptError format:NULL error:&connectionError];
                 //NSArray *tempDataArray = [dict objectForKey:@""];
-                for (NSDictionary *dictionary in dict) {
-                    NSString *actor = [dictionary objectForKey:@"actor"];
-                    NSString *passenger = [dictionary objectForKey:@"passenger"];
-                    NSLog(@"%@", actor);
-                    NSLog(@"%@", passenger);
+                for (NSDictionary *dictionary in dict)
+                {
+                    NSManagedObject *character = [NSEntityDescription insertNewObjectForEntityForName:@"Character" inManagedObjectContext:self.managedObjectContext];
+
+                    [character setValue:[dictionary objectForKey:@"actor"] forKey:@"actor"];
+                    [character setValue:[dictionary objectForKey:@"passenger"] forKey:@"passenger"];
+                    [self.managedObjectContext save:nil]; //the save is the error state - don't set to nil in an actual app
+                    [self loadData];
                 }
-
-
-
-
-
-                //NSLog(@"%@", dict);
-
-
-
-
             }
         }
+        NSLog(@"Connection Error: %@", connectionError); //don't think I want to reuse the same term "connectionError" throughout the app
     }];
-
-    /*
-        {
-            NSError *jsonError = nil;
-            if (data)
-            {
-                NSDictionary *tempDictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
-                NSArray *tempDataArray = [tempDictionary objectForKey:@"data"];
-
-                for (NSDictionary *tempDictionary in tempDataArray) //to be able to pull objectForKeys from Dictionary
-                {
-                    if (self.photos.count < 10)
-                    {
-                        NSDictionary *tempImagesDictionary = [tempDictionary objectForKey:@"images"];
-                        NSDictionary *tempLowResDictionary = [tempImagesDictionary objectForKey:@"low_resolution"];
-                        NSString *tempURLString = [tempLowResDictionary objectForKey:@"url"];
-
-                        PhotoInfo *photo = [[PhotoInfo alloc] initWithImage:tempURLString]; //learned this - taylors meetup project implementation
-                        [self.photos addObject:photo];
-                    }
-                }
-                NSLog(@"self.photos %@", self.photos);
-                [self.imageCollectionView reloadData];
-                [self.imageCollectionView setContentOffset:CGPointZero animated:YES];
-            }
-            NSLog(@"Connection Error: %@", connectionError);
-            NSLog(@"JSON Error: %@", jsonError);
-
-
-        NSLog(@"%@", dict);
-    }];*/
 }
 
 @end
