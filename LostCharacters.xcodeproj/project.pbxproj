@@ -88,11 +88,11 @@
 			children = (
 				12517C3C19F6DE0000BB5904 /* AppDelegate.h */,
 				12517C3D19F6DE0000BB5904 /* AppDelegate.m */,
+				12517C4819F6DE0000BB5904 /* Main.storyboard */,
 				12517C4219F6DE0000BB5904 /* MasterViewController.h */,
 				12517C4319F6DE0000BB5904 /* MasterViewController.m */,
 				12517C4519F6DE0000BB5904 /* DetailViewController.h */,
 				12517C4619F6DE0000BB5904 /* DetailViewController.m */,
-				12517C4819F6DE0000BB5904 /* Main.storyboard */,
 				12517C4B19F6DE0000BB5904 /* Images.xcassets */,
 				12517C4D19F6DE0000BB5904 /* LaunchScreen.xib */,
 				12517C3F19F6DE0000BB5904 /* LostCharacters.xcdatamodeld */,
