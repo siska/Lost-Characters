@@ -12,6 +12,7 @@
 @interface MasterViewController ()
 
 @property NSArray *characters;
+@property NSNumber *hasUserAlreadyOpenedApp;
 
 @end
 
@@ -60,6 +61,8 @@
     self.characters = [self.managedObjectContext executeFetchRequest:request error:nil];
     [self.tableView reloadData];
 }
+
+
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
