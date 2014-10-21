@@ -59,5 +59,27 @@
     }];
 }
 
+-(void)loadData
+{
+    NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"Character"];
+    self.characters = [self.managedObjectContext executeFetchRequest:request error:nil];
+    [self.tableView reloadData];
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSManagedObject *character = [self.characters objectAtIndex:indexPath.row];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+
+    cell.textLabel.text = [character valueForKey:@"actor"];
+    cell.detailTextLabel.text = [character valueForKey:@"passenger"];
+    return cell;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return self.characters.count;
+}
+
 @end
 
