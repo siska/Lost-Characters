@@ -38,23 +38,31 @@
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError)
     {
-
+        {
 
             NSError *connectionError = nil;
             if (data)
             {
                 NSDictionary *dict = [NSPropertyListSerialization propertyListWithData:data options:NSPropertyListReadCorruptError format:NULL error:&connectionError];
                 //NSArray *tempDataArray = [dict objectForKey:@""];
+                for (NSDictionary *dictionary in dict) {
+                    NSString *actor = [dictionary objectForKey:@"actor"];
+                    NSString *passenger = [dictionary objectForKey:@"passenger"];
+                    NSLog(@"%@", actor);
+                    NSLog(@"%@", passenger);
+                }
 
 
 
-                NSLog(@"%@", dict);
+
+
+                //NSLog(@"%@", dict);
 
 
 
 
             }
-
+        }
     }];
 
     /*
