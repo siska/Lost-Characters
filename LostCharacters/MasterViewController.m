@@ -21,15 +21,7 @@
 {
     [super viewDidLoad];
 
-    if (self.characters.count == 0)
-    {
-        [self pullFromPList];
-    }
-    else
-    {
-        //will be loadData
-    }
-
+    [self pullFromPList];
 }
 
 -(void)pullFromPList
@@ -62,14 +54,17 @@
 -(void)loadData
 {
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"Character"];
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"actor" ascending:YES];
+
+    request.sortDescriptors = [NSArray arrayWithObjects:sortDescriptor, nil];
     self.characters = [self.managedObjectContext executeFetchRequest:request error:nil];
     [self.tableView reloadData];
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSManagedObject *character = [self.characters objectAtIndex:indexPath.row];
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+    NSManagedObject *character = [self.characters objectAtIndex:indexPath.row];
 
     cell.textLabel.text = [character valueForKey:@"actor"];
     cell.detailTextLabel.text = [character valueForKey:@"passenger"];
@@ -82,4 +77,5 @@
 }
 
 @end
+
 
