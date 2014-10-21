@@ -21,8 +21,22 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self decisionToPullPList];
+}
 
-    [self pullFromPList];
+-(void)decisionToPullPList
+{
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    self.hasUserAlreadyOpenedApp = [userDefaults objectForKey:@"DefaultsLoaded"];
+
+    if ((self.hasUserAlreadyOpenedApp.integerValue == 1))
+    {
+        [self loadData];
+    }
+    else
+    {
+        [self pullFromPList];
+    }
 }
 
 -(void)pullFromPList
@@ -48,6 +62,11 @@
                 }
             }
         }
+        NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+        NSNumber *defaultsLoaded = @1;
+        [userDefaults setObject:defaultsLoaded forKey:@"DefaultsLoaded"];
+        [userDefaults synchronize];
+
         NSLog(@"Connection Error: %@", connectionError); //don't think I want to reuse the same term "connectionError" throughout the app
     }];
 }
