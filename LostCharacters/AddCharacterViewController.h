@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface AddCharacterViewController : UIViewController
+@property (strong, nonatomic) IBOutlet UITextField *actorTextField;
+@property (strong, nonatomic) IBOutlet UITextField *passengerTextField;
 
 @end
