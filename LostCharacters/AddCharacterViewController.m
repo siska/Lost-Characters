@@ -21,7 +21,15 @@
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-    
+    if (textField.tag == 1)
+    {
+        self.actorTextField.text = textField.text;
+    }
+    else if (textField.tag == 2)
+    {
+        self.passengerTextField.text = textField.text;
+    }
+    return YES;
 }
 
 @end
