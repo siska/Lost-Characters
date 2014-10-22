@@ -16,6 +16,7 @@
 		12517C4C19F6DE0000BB5904 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12517C4B19F6DE0000BB5904 /* Images.xcassets */; };
 		12517C4F19F6DE0000BB5904 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12517C4D19F6DE0000BB5904 /* LaunchScreen.xib */; };
 		12517C5B19F6DE0000BB5904 /* LostCharactersTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 12517C5A19F6DE0000BB5904 /* LostCharactersTests.m */; };
+		12517C6619F72FCF00BB5904 /* AddCharacterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12517C6519F72FCF00BB5904 /* AddCharacterViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,8 @@
 		12517C5419F6DE0000BB5904 /* LostCharactersTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LostCharactersTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		12517C5919F6DE0000BB5904 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		12517C5A19F6DE0000BB5904 /* LostCharactersTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LostCharactersTests.m; sourceTree = "<group>"; };
+		12517C6419F72FCF00BB5904 /* AddCharacterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddCharacterViewController.h; sourceTree = "<group>"; };
+		12517C6519F72FCF00BB5904 /* AddCharacterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddCharacterViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +94,8 @@
 				12517C4819F6DE0000BB5904 /* Main.storyboard */,
 				12517C4219F6DE0000BB5904 /* MasterViewController.h */,
 				12517C4319F6DE0000BB5904 /* MasterViewController.m */,
+				12517C6419F72FCF00BB5904 /* AddCharacterViewController.h */,
+				12517C6519F72FCF00BB5904 /* AddCharacterViewController.m */,
 				12517C4519F6DE0000BB5904 /* DetailViewController.h */,
 				12517C4619F6DE0000BB5904 /* DetailViewController.m */,
 				12517C4B19F6DE0000BB5904 /* Images.xcassets */,
@@ -227,6 +232,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				12517C6619F72FCF00BB5904 /* AddCharacterViewController.m in Sources */,
 				12517C4719F6DE0000BB5904 /* DetailViewController.m in Sources */,
 				12517C4419F6DE0000BB5904 /* MasterViewController.m in Sources */,
 				12517C4119F6DE0000BB5904 /* LostCharacters.xcdatamodeld in Sources */,
@@ -422,6 +428,7 @@
 				12517C6019F6DE0000BB5904 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		12517C6119F6DE0000BB5904 /* Build configuration list for PBXNativeTarget "LostCharactersTests" */ = {
 			isa = XCConfigurationList;
@@ -430,6 +437,7 @@
 				12517C6319F6DE0000BB5904 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

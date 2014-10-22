@@ -62,16 +62,22 @@
                             <outlet property="delegate" destination="pGg-6v-bdr" id="Y6K-Cp-Qkv"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Master" id="tQt-TN-PWz"/>
+                    <navigationItem key="navigationItem" title="Master" id="tQt-TN-PWz">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="TGK-1b-wMH">
+                            <connections>
+                                <segue destination="rW3-aU-oXY" kind="presentation" id="9rU-O3-SYZ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Cn-md-YlS" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="605" y="64"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Character View Controller-->
         <scene sceneID="ZCq-e6-T1J">
             <objects>
-                <viewController id="rW3-aU-oXY" sceneMemberID="viewController">
+                <viewController id="rW3-aU-oXY" customClass="AddCharacterViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="WVP-4z-skV"/>
                         <viewControllerLayoutGuide type="bottom" id="dps-al-G1W"/>
